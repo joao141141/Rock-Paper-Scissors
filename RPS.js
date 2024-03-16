@@ -1,62 +1,66 @@
-console.log('hi');
+console.log("hi");
 
-const getUserChoice = userInput => {
+const getUserChoice = (userInput) => {
   userInput = userInput.toLowerCase();
-  if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === 'bomb') {
+  if (
+    userInput === "rock" ||
+    userInput === "paper" ||
+    userInput === "scissors" ||
+    userInput === "bomb"
+  ) {
     return userInput;
   } else {
     console.log("ABESTADO!");
   }
-}
+};
 
-function getComputerChoice(){
+function getComputerChoice() {
   randomNumber = Math.floor(Math.random() * 3);
-  switch (randomNumber){
+  switch (randomNumber) {
     case 0:
-    return 'rock';
-    break;
+      return "rock";
+      break;
     case 1:
-    return 'paper';
-    break;
+      return "paper";
+      break;
     case 2:
-    return 'scissors';
-    break;
+      return "scissors";
+      break;
   }
 }
-
 
 function determineWinner(userChoice, computerChoice) {
-  if (computerChoice === userChoice){
-    return "TIE" 
+  if (computerChoice === userChoice) {
+    return "TIE";
   }
-  if (userChoice === 'rock') {
-    if (computerChoice === 'paper'){
-      return 'COMPUTER WINS!!!!'
+  if (userChoice === "rock") {
+    if (computerChoice === "paper") {
+      return "COMPUTER WINS!!!!";
     } else {
-      return "USER WON!!!!"
+      return "USER WON!!!!";
     }
   }
-  if (userChoice === 'paper') {
-    if (computerChoice === 'scissors') {
-      return 'COMPUTER WINS!!!!'
+  if (userChoice === "paper") {
+    if (computerChoice === "scissors") {
+      return "COMPUTER WINS!!!!";
     } else {
-      return 'USER WON!!!!'
+      return "USER WON!!!!";
     }
   }
-   if (userChoice === 'scissors') {
-    if (computerChoice === 'rock'){
-      return 'COMPUTER WINS!!!!'
+  if (userChoice === "scissors") {
+    if (computerChoice === "rock") {
+      return "COMPUTER WINS!!!!";
     } else {
-      return 'USER WON'
+      return "USER WON";
     }
-   }
-   if (userChoice === 'bomb') {
-    return 'CABUUUUUUUUM, USER WINS'
-   }
+  }
+  if (userChoice === "bomb") {
+    return "CABUUUUUUUUM, USER WINS";
+  }
 }
 
 const playGame = () => {
-  const userChoice = getUserChoice('rock');
+  const userChoice = getUserChoice("rock");
   //COLOQUE SUA ESCOLHA NO CODIGO ACIMA.
   const computerChoice = getComputerChoice();
   console.log(`You threw: ${userChoice}`);
@@ -64,4 +68,5 @@ const playGame = () => {
   console.log(determineWinner(userChoice, computerChoice));
 };
 
-playGame()
+playGame();
+
